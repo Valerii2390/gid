@@ -1,6 +1,7 @@
         @import '_vars';
         @import '_global';
         @import '_fonts';
+        // start header
         .header {
             background-image: url(../images/header/header-bg.jpg);
             max-width: 1920px;
@@ -176,6 +177,7 @@
             display: none;
         }
         
+        // end header
         // start about
         .about {
             padding-top: 45px;
@@ -229,7 +231,107 @@
             line-height: 18px;
         }
         
-        .about__inner {}
-        
         // end about
+        // start cost
+        .cost {
+            padding: 30px 0px 27px;
+        }
+        
+        .cost__title {
+            margin-left: 62px;
+            font-size: 48px;
+            line-height: 56px;
+            text-transform: uppercase;
+            margin-bottom: 66px;
+            position: relative;
+            padding-bottom: 18px;
+            &::after {
+                position: absolute;
+                content: '';
+                width: 200px;
+                height: 10px;
+                background-color: black;
+                left: -62px;
+                bottom: 0;
+            }
+        }
+        
+        .cost__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .cost__inner-content {}
+        
+        .cost__inner-title {
+            font-size: 48px;
+            line-height: 56px;
+            @include f400;
+            color: #000;
+            margin-bottom: 48px;
+        }
+        
+        .cost__inner-subtitle {
+            font-size: 30px;
+            line-height: 45px;
+            margin-bottom: 155px;
+            color: #333;
+        }
+        
+        .cost__btn {
+            background: #000000;
+            border: 1px solid #000000;
+            color: #fff;
+            font-size: 30px;
+            line-height: 42px;
+            padding: 35px 104px;
+        }
+        
+        .cost__inner-desc {
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 0px;
+                height: 0px;
+                border-left: 50px solid transparent;
+                border-right: 50px solid transparent;
+                border-bottom: 50px solid #000;
+                transform: rotate(135deg);
+                right: 111px;
+                top: 28px;
+            }
+        }
+        
+        img {
+            margin-bottom: 34px;
+        }
+        
+        .cost__inner-list {
+            color: #000;
+            font-size: 36px;
+            line-height: 53px;
+            li {
+                font-size: 36px;
+                line-height: 53px;
+                color: #333;
+                margin-left: 40px;
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 20px;
+                    height: 20px;
+                    background-color: #000;
+                    left: -34px;
+                    bottom: 15px;
+                }
+            }
+            li+li {
+                margin-top: 27px;
+            }
+        }
+        
+        // end cost
         @import '_media';

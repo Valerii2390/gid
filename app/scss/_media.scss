@@ -32,12 +32,21 @@
     
     @media (max-width: 1200px) {}
     
-    @media (max-width: 1080px) {}
+    @media (max-width: 1080px) {
+        .cost__inner {
+            flex-wrap: wrap;
+            flex-direction: column-reverse;
+        }
+        .cost__inner-list {
+            margin-bottom: 30px;
+        }
+    }
     
     @media (max-width: 1024px) {
         .about {
             padding-top: 0px;
             position: relative;
+            padding-bottom: 0px;
         }
         .about__top {
             flex-wrap: wrap;
@@ -45,7 +54,14 @@
         }
     }
     
-    @media (max-width: 960px) {}
+    @media (max-width: 960px) {
+        .cost__inner-title {
+            display: none;
+        }
+        .cost__inner-subtitle {
+            display: none;
+        }
+    }
     
     @media (max-width: 900px) {
         .hero__inner {
@@ -73,14 +89,39 @@
                 line-height: 16px;
             }
         }
+        .cost__inner-list {
+            font-size: 24px;
+            line-height: 36px;
+            margin-bottom: 30px;
+            li {
+                font-size: 20px;
+                line-height: 24px;
+                margin-left: 15px;
+            }
+            li+li {
+                margin-top: 5px;
+            }
+        }
     }
     
-    @media (max-width: 640px) {}
+    @media (max-width: 640px) {
+        .cost__title {
+            font-size: 36px;
+            line-height: 44px;
+        }
+    }
     
     @media (max-width: 600px) {
         .header__logo {
             flex: 0 0 100px;
             overflow-x: hidden;
+            img {
+                width: 100%;
+            }
+        }
+        .cost__inner-pic {
+            display: flex;
+            flex: 0 0 200px;
             img {
                 width: 100%;
             }
@@ -118,8 +159,45 @@
                 justify-content: space-around;
             }
         }
+        .cost__title {
+            font-size: 24px;
+            line-height: 32px;
+        }
+        .cost__inner-desc {
+            &::before {
+                right: 67px;
+            }
+        }
+        .cost__inner-list li::before {
+            top: 3px;
+            left: -13px;
+            width: 10px;
+            height: 10px;
+        }
+        .cost__inner-list {
+            li {
+                font-size: 12px;
+                line-height: 16px;
+                margin-left: 15px;
+            }
+        }
+        .cost__btn {
+            font-size: 20px;
+            line-height: 28px;
+            padding: 20px 40px;
+        }
     }
     
-    @media (max-width: 360px) {}
+    @media (max-width: 360px) {
+        .cost__inner-desc {
+            &::before {
+                right: 67px;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 20px solid #000;
+                top: 7px;
+            }
+        }
+    }
     
     @media (max-width: 320px) {}
