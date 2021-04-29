@@ -1,0 +1,235 @@
+        @import '_vars';
+        @import '_global';
+        @import '_fonts';
+        .header {
+            background-image: url(../images/header/header-bg.jpg);
+            max-width: 1920px;
+            min-height: 800px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        
+        .header__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 42px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header__btn {
+            width: 20px;
+            height: 20px;
+            position: relative;
+            span {
+                position: absolute;
+                content: '';
+                width: 30px;
+                height: 1px;
+                background-color: #fff;
+            }
+            &::before {
+                content: '';
+                position: absolute;
+                top: -7px;
+                left: 0;
+                z-index: 1;
+                background-color: #fff;
+                width: 40px;
+                height: 1px;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 13px;
+                left: 0;
+                z-index: 1;
+                background-color: #fff;
+                width: 40px;
+                height: 1px;
+            }
+        }
+        
+        .header__list {
+            display: none;
+        }
+        
+        .header__item {
+            padding: 10px 30px;
+            text-align: center;
+            a {
+                font-size: 36px;
+                line-height: 42px;
+            }
+        }
+        
+        .social__list {
+            display: none;
+        }
+        
+        .social__list.active {
+            position: absolute;
+            display: block;
+            display: flex;
+            justify-self: center;
+            align-items: flex-end;
+        }
+        
+        .menu.active {
+            display: block;
+            background: rgba(19, 19, 19, 0.9);
+            position: absolute;
+            width: 100%;
+            min-height: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s;
+            .header__list.active {
+                display: flex;
+                flex-direction: column;
+                .header__item.active+.header__item.active {
+                    margin-top: 5px;
+                }
+                .header__item.active {
+                    border: 1px solid transparent;
+                    transition: all 0.5s;
+                }
+                .header__item.active:hover {
+                    border: 1px solid #f2f2f2;
+                    transform: translateX(-20px);
+                }
+            }
+            .social__list {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                max-width: 600px;
+                width: 100%;
+                bottom: 100px;
+            }
+        }
+        
+        .header__btn.active {
+            span {
+                transform: scale(0);
+            }
+            &::before {
+                transform: rotate(-45deg);
+                transition: all 0.5s;
+                left: 2px;
+                top: 9px;
+            }
+            &::after {
+                transform: rotate(45deg);
+                transition: all 0.5s;
+                top: 8px;
+            }
+        }
+        
+        .hero__inner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 600px;
+            flex-direction: column;
+            .hero__title {
+                font-size: 84px;
+                line-height: 93px;
+                color: #fff;
+                margin-bottom: 100px;
+            }
+            .hero__btns {
+                text-align: center;
+                div {
+                    display: inline-block;
+                }
+                .hero__projects {
+                    background: rgba(17, 17, 17, 0.9);
+                    border: 1px solid #C4C4C4;
+                    padding: 24px 93px 24px 113px;
+                    margin-right: 20px;
+                    a {
+                        color: #fff;
+                    }
+                }
+                .hero__projects:hover {
+                    background-color: rgba(17, 17, 17, 0.6);
+                }
+                .hero__cost {
+                    background: rgba(17, 17, 17, 0.9);
+                    border: 1px solid #C4C4C4;
+                    padding: 24px 93px 24px 113px;
+                    a {
+                        color: #fff;
+                    }
+                }
+                .hero__cost:hover {
+                    background-color: rgba(17, 17, 17, 0.6);
+                }
+            }
+        }
+        
+        .hero__inner.active {
+            display: none;
+        }
+        
+        // start about
+        .about {
+            padding-top: 45px;
+            padding-bottom: 50px;
+        }
+        
+        .about__top {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-start;
+            margin: 0px 40px;
+            background-color: #F2F2F2;
+            padding: 37px 0px 62px;
+        }
+        
+        .about__top-item {
+            max-width: 331px;
+            width: 100%;
+            color: $tex;
+        }
+        
+        .about__title {
+            @include f400;
+            font-size: 50px;
+            line-height: 60px;
+            margin-bottom: 7px;
+        }
+        
+        .about__content {
+            margin-left: 30px;
+        }
+        
+        .about__subtitle {
+            font-size: 20px;
+            line-height: 26px;
+            @include f400;
+            margin-bottom: 16px;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 20px;
+                height: 20px;
+                background-color: $tex;
+                left: -22px;
+            }
+        }
+        
+        .about__text {
+            font-size: 16px;
+            line-height: 18px;
+        }
+        
+        .about__inner {}
+        
+        // end about
+        @import '_media';
